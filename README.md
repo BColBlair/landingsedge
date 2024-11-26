@@ -18,4 +18,4 @@ A responsive landing page with dynamic navigation, active states for sections, a
 - None. Uses vanilla JavaScript, HTML, and CSS.
 
 ## Author
-Brittney White-Blair
+Brittney White-Blair 2024
