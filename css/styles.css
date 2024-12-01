@@ -47,14 +47,60 @@ section {
     position: relative;
     min-height: 80vh;
     padding: 2em 1em;
+    background: rgba(255, 255, 255, 0.1); /* Adds subtle background for sections */
+    margin-bottom: 2em;
+    border-radius: 8px;
 }
 
-/* ---- Module Rules ---- */
+/* Active section highlighting */
+.your-active-class {
+    background: rgba(255, 255, 255, 0.3);
+    border-left: 5px solid #88cbae;
+    padding-left: 10px;
+    transition: background 0.3s, border-left 0.3s;
+}
 
-/* Navigation Styles */
+/* ---- Navigation Menu ---- */
+.navbar__menu {
+    position: fixed; /* Fixes the navbar at the top */
+    top: 0; /* Aligns to the top of the page */
+    width: 100%; /* Spans the full width of the viewport */
+    background-color: rgba(0, 13, 60, 0.9); /* Semi-transparent dark background */
+    z-index: 1000; /* Ensures it stays above other elements */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adds slight shadow for depth */
+}
+
 .navbar__menu ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     display: flex;
-    justify
+    justify-content: space-around; /* Spreads items evenly */
+    padding: 1em 0;
+}
+
+.navbar__menu .menu__link {
+    text-decoration: none;
+    color: #fff;
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 1.2em;
+    transition: color 0.3s, transform 0.2s;
+}
+
+.navbar__menu .menu__link:hover {
+    color: #88cbae; /* Changes color on hover */
+    transform: scale(1.1); /* Slight enlargement on hover */
+}
+
+/* Footer */
+.page__footer {
+    text-align: center;
+    padding: 2em 0;
+    background: #00113c;
+    color: #88cbae;
+}
+
+.page__footer p {
+    margin: 0;
+    font-size: 1em;
+}
