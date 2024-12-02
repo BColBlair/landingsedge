@@ -92,6 +92,12 @@ section {
     transform: scale(1.1); /* Slight enlargement on hover */
 }
 
+/* Active navbar item */
+.navbar__menu .menu__link.active {
+    color: #88cbae;
+    font-weight: bold;
+}
+
 /* Footer */
 .page__footer {
     text-align: center;
