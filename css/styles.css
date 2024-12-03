@@ -47,7 +47,7 @@ section {
     position: relative;
     min-height: 80vh;
     padding: 2em 1em;
-    background: rgba(255, 255, 255, 0.1); /* Adds subtle background for sections */
+    background: rgba(255, 255, 255, 0.1);
     margin-bottom: 2em;
     border-radius: 8px;
 }
@@ -62,12 +62,12 @@ section {
 
 /* ---- Navigation Menu ---- */
 .navbar__menu {
-    position: fixed; /* Fixes the navbar at the top */
-    top: 0; /* Aligns to the top of the page */
-    width: 100%; /* Spans the full width of the viewport */
-    background-color: rgba(0, 13, 60, 0.9); /* Semi-transparent dark background */
-    z-index: 1000; /* Ensures it stays above other elements */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adds slight shadow for depth */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0, 13, 60, 0.9);
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .navbar__menu ul {
@@ -75,7 +75,7 @@ section {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: space-around; /* Spreads items evenly */
+    justify-content: space-around;
     padding: 1em 0;
 }
 
@@ -88,8 +88,8 @@ section {
 }
 
 .navbar__menu .menu__link:hover {
-    color: #88cbae; /* Changes color on hover */
-    transform: scale(1.1); /* Slight enlargement on hover */
+    color: #88cbae;
+    transform: scale(1.1);
 }
 
 /* Active navbar item */
