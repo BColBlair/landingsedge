@@ -2,7 +2,7 @@
 const navBar = document.getElementById('navbar__list'); // Select the empty UL
 const sections = document.querySelectorAll('section'); // Get all sections
 
-// Build the navigation bar
+// Build the navigation bar dynamically
 const buildNavBar = () => {
     sections.forEach(section => {
         // Create a list item
@@ -14,15 +14,23 @@ const buildNavBar = () => {
     });
 };
 
-// Highlight the section in the viewport
-const highlightSection = () => {
-    sections.forEach(section => {
-        const rect = section.getBoundingClientRect();
-        if (rect.top >= 0 && rect.top <= 300) {
-            // Remove active class from all sections
-            sections.forEach(s => s.classList.remove('your-active-class'));
-            // Add active class to the current section
-            section.classList.add('your-active-class');
+// Highlight the section in the viewport and the corresponding nav item
+const highlightSection = (entries, observer) => {
+    entries.forEach(entry => {
+        const navLinks = document.querySelectorAll('.menu__link');
+        if (entry.isIntersecting) {
+            // Add active class to the section
+            entry.target.classList.add('your-active-class');
+            // Highlight the corresponding nav item
+            navLinks.forEach(link => {
+                link.classList.toggle(
+                    'active',
+                    link.getAttribute('href') === `#${entry.target.id}`
+                );
+            });
+        } else {
+            // Remove active class when the section is out of view
+            entry.target.classList.remove('your-active-class');
         }
     });
 };
@@ -38,14 +46,22 @@ const enableSmoothScrolling = () => {
     });
 };
 
+// Initialize the Intersection Observer for section highlighting
+const initializeObserver = () => {
+    const options = {
+        root: null, // Use the viewport as the root
+        threshold: 0.6 // Trigger when 60% of the section is in view
+    };
+    const observer = new IntersectionObserver(highlightSection, options);
+    sections.forEach(section => observer.observe(section));
+};
+
 // Initialize the application
 document.addEventListener('DOMContentLoaded', () => {
     buildNavBar(); // Build the navigation bar
     enableSmoothScrolling(); // Enable smooth scrolling
-    window.addEventListener('scroll', highlightSection); // Attach scroll listener
+    initializeObserver(); // Initialize section highlighting
 });
-
-
 
 
 
